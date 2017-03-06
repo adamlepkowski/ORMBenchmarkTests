@@ -11,6 +11,10 @@ namespace ORMBenchmarkTests
         {
         }
 
+        public DatabaseContext(System.Data.Common.DbConnection dbConnection) : base(dbConnection, false)
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
