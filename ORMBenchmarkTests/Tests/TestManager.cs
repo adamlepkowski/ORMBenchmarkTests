@@ -36,8 +36,6 @@ namespace ORMBenchmarkTests.Tests
                 {
                     this.TestResults.Add(testScenario.Name, new List<long>() { responseTime });
                 }
-
-                //Thread.Sleep(2000);
             }
         }
     }

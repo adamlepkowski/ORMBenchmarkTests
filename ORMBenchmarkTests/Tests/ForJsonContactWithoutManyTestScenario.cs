@@ -48,16 +48,12 @@ namespace ORMBenchmarkTests.Tests
                 }
             }
 
-            watch.Stop();
-            Console.WriteLine(watch.ElapsedMilliseconds);
-
             var watchSerializer = new Stopwatch();
             watchSerializer.Start();
             ServiceStack.Text.JsonSerializer.DeserializeFromString<Contact>(jsonResult.ToString());
             watchSerializer.Stop();
-            Console.WriteLine(watchSerializer.ElapsedMilliseconds);
-
-
+            Console.WriteLine($"JSON serialization time: {watchSerializer.ElapsedMilliseconds}");
+            
             watch.Stop();
             return watch.ElapsedMilliseconds;
         }

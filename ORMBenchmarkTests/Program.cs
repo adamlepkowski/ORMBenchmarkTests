@@ -32,10 +32,11 @@ namespace ORMBenchmarkTests
             {
                 connection.Open();
 
+                testManager.AddTest(new DapperContactWithManyTestScenario(connection));
                 testManager.AddTest(new ForJsonContactWithoutManyTestScenario(connection));
+                testManager.AddTest(new DapperContactWithoutManyTestScenario(connection));
                 testManager.AddTest(new EntityFrameworkContactWithoutManyTestScenario(connection));
                 testManager.AddTest(new EntityFrameworkContactWithManyTestScenario(connection));
-
 
                 testManager.Run();
             }

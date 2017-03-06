@@ -16,6 +16,8 @@ namespace ORMBenchmarkTests
             {
                 dbContext.Database.ExecuteSqlCommand(System.IO.File.ReadAllText(@"Tests\Sqls\RemoveAllStoredProcedures.sql"));
                 dbContext.Database.ExecuteSqlCommand(System.IO.File.ReadAllText(@"Tests\Sqls\GetContactByIdInJsonFormat.sql"));
+                dbContext.Database.ExecuteSqlCommand(System.IO.File.ReadAllText(@"Tests\Sqls\GetContactByIdDapperWithMany.sql"));
+                dbContext.Database.ExecuteSqlCommand(System.IO.File.ReadAllText(@"Tests\Sqls\GetContactByIdDapperWithoutMany.sql"));
             }
 
             Console.WriteLine("END Upload Stored Procedure");
