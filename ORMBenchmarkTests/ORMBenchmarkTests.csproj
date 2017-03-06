@@ -45,6 +45,10 @@
       <HintPath>..\packages\NBuilder.4.0.0\lib\net40\FizzWare.NBuilder.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.5.6\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -79,6 +83,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\EntityFrameworkContactWithManyTestScenario.cs" />
+    <Compile Include="Tests\ForJsonContactWithoutManyTestScenario.cs" />
     <Compile Include="Tests\EntityFrameworkContactWithoutManyTestScenario.cs" />
     <Compile Include="Tests\ITestScenario.cs" />
     <Compile Include="Tests\TestManager.cs" />
@@ -86,6 +91,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\Sqls\RemoveAllStoredProcedures.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tests\Sqls\GetContactByIdInJsonFormat.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

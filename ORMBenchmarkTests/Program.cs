@@ -22,6 +22,8 @@ namespace ORMBenchmarkTests
 
             DatabaseManager.CreateContactTestData();
 
+            DatabaseManager.UploadStoredProcedures();
+
             Console.WriteLine("Prepare test data");
 
             var testManager = new TestManager();
@@ -30,9 +32,10 @@ namespace ORMBenchmarkTests
             {
                 connection.Open();
 
+                testManager.AddTest(new ForJsonContactWithoutManyTestScenario(connection));
                 testManager.AddTest(new EntityFrameworkContactWithoutManyTestScenario(connection));
                 testManager.AddTest(new EntityFrameworkContactWithManyTestScenario(connection));
-                
+
 
                 testManager.Run();
             }

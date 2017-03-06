@@ -13,7 +13,7 @@ namespace ORMBenchmarkTests.Tests
         public EntityFrameworkContactWithoutManyTestScenario(SqlConnection sqlConnection)
         {
             _sqlConnection = sqlConnection;
-            Name = "Entity Framework without many";
+            Name = "Entity Framework without multiple 1:N relationships";
         }
 
         public long GetEntity(int id)

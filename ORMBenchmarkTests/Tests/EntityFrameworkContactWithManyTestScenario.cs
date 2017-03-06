@@ -14,7 +14,7 @@ namespace ORMBenchmarkTests.Tests
         public EntityFrameworkContactWithManyTestScenario(SqlConnection sqlConnection)
         {
             _sqlConnection = sqlConnection;
-            Name = "Entity Framework with many";
+            Name = "Entity Framework with multiple 1:N relationships";
         }
 
         public long GetEntity(int id)

@@ -8,6 +8,19 @@ namespace ORMBenchmarkTests
     {
         public static int TestedContactId = 1;
 
+        public static void UploadStoredProcedures()
+        {
+            Console.WriteLine("Upload Stored Procedure");
+
+            using (var dbContext = new DatabaseContext())
+            {
+                dbContext.Database.ExecuteSqlCommand(System.IO.File.ReadAllText(@"Tests\Sqls\RemoveAllStoredProcedures.sql"));
+                dbContext.Database.ExecuteSqlCommand(System.IO.File.ReadAllText(@"Tests\Sqls\GetContactByIdInJsonFormat.sql"));
+            }
+
+            Console.WriteLine("END Upload Stored Procedure");
+        }
+
         public static void ClearData()
         {
             Console.WriteLine("Clear Data");
