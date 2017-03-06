@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using ORMBenchmarkTests.Model;
 
@@ -13,6 +14,10 @@ namespace ORMBenchmarkTests
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<Contact>()
+                .Property(f => f.ContactId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         }
 
         public DbSet<Company> Companies{ get; set; }
