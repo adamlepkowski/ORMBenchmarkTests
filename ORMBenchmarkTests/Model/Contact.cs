@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORMBenchmarkTests.Model
 {
@@ -39,6 +40,8 @@ namespace ORMBenchmarkTests.Model
         public Company Company { get; set; }
 
         public int CreatedById { get; set; }
+
+        [ForeignKey("CreatedById")]
         public User CreatedBy { get; set; }
 
         public int AttributeValuesId { get; set; }

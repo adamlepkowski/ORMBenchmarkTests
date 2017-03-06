@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORMBenchmarkTests.Model
 {
@@ -32,9 +33,11 @@ namespace ORMBenchmarkTests.Model
         public DateTime? MaxDateTimeAttributeB { get; set; }
 
         public int MinPriceId { get; set; }
+        [ForeignKey("MinPriceId")]
         public Price MinPrice { get; set; }
 
         public int MaxPriceId { get; set; }
+        [ForeignKey("MaxPriceId")]
         public Price MaxPrice { get; set; }
     }
 }

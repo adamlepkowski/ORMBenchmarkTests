@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORMBenchmarkTests.Model
 {
@@ -11,6 +12,7 @@ namespace ORMBenchmarkTests.Model
         public Contact Contact { get; set; }
 
         public int CreatedById { get; set; }
+        [ForeignKey("CreatedById")]
         public User CreatedBy { get; set; }
 
         public int IntA { get; set; }
