@@ -78,7 +78,7 @@ namespace ORMBenchmarkTests
                         .With(y => y.CurrencyDefinition = Builder<CurrencyDefinition>.CreateNew().Build());
 
                 var contact = Builder<Contact>.CreateNew()
-                  .With(x => x.ContactId = DatabaseManager.TestedContactId)
+                  .With(x => x.Id = DatabaseManager.TestedContactId)
                   .With(x => x.Profession = Builder<Profession>.CreateNew().Build())
                   .With(x => x.Nationality = Builder<Nationality>.CreateNew().Build())
                   .With(x => x.Company = Builder<Company>.CreateNew().Build())

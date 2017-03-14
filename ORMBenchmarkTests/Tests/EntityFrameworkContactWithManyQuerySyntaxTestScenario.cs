@@ -33,13 +33,13 @@ namespace ORMBenchmarkTests.Tests
 
                 var contactItem =
                     (from c in dbContext.Contacts.AsNoTracking()
-                     join profession in dbContext.Professions.AsNoTracking() on c.ProfessionId equals profession.ProfessionId
-                     join nationality in dbContext.Nationalities.AsNoTracking() on c.NationalityId equals nationality.NationalityId
-                     join company in dbContext.Companies.AsNoTracking() on c.CompanyId equals company.CompanyId
-                     join createdByUser in dbContext.Users.AsNoTracking() on c.CreatedById equals createdByUser.UserId
-                     join createdByUserType in dbContext.UserTypes.AsNoTracking() on createdByUser.UserTypeId equals createdByUserType.UserTypeId
-                     join department in dbContext.Departments.AsNoTracking() on createdByUser.DepartmentId equals department.DepartmentId
-                     where c.ContactId == id
+                     join profession in dbContext.Professions.AsNoTracking() on c.ProfessionId equals profession.Id
+                     join nationality in dbContext.Nationalities.AsNoTracking() on c.NationalityId equals nationality.Id
+                     join company in dbContext.Companies.AsNoTracking() on c.CompanyId equals company.Id
+                     join createdByUser in dbContext.Users.AsNoTracking() on c.CreatedById equals createdByUser.Id
+                     join createdByUserType in dbContext.UserTypes.AsNoTracking() on createdByUser.UserTypeId equals createdByUserType.Id
+                     join department in dbContext.Departments.AsNoTracking() on createdByUser.DepartmentId equals department.Id
+                     where c.Id == id
                      select new
                      {
                          Profession = profession,
@@ -51,7 +51,7 @@ namespace ORMBenchmarkTests.Tests
                      }).First();
 
                 var contactPhones = (from p in dbContext.Phones.AsNoTracking()
-                                     join phoneType in dbContext.PhoneTypes.AsNoTracking() on p.PhoneTypeId equals phoneType.PhoneTypeId
+                                     join phoneType in dbContext.PhoneTypes.AsNoTracking() on p.PhoneTypeId equals phoneType.Id
                                      where p.ContactId == id
                                      select new
                                      {
@@ -60,7 +60,7 @@ namespace ORMBenchmarkTests.Tests
                                      }).ToList();
 
                 var contactEmails = (from e in dbContext.Emails.AsNoTracking()
-                                     join phoneType in dbContext.EmailTypes.AsNoTracking() on e.EmailTypeId equals phoneType.EmailTypeId
+                                     join phoneType in dbContext.EmailTypes.AsNoTracking() on e.EmailTypeId equals phoneType.Id
                                      where e.ContactId == id
                                      select new
                                      {
@@ -69,9 +69,9 @@ namespace ORMBenchmarkTests.Tests
                                      }).ToList();
 
                 var contactNegotiators = (from n in dbContext.ContactNegotiators.AsNoTracking()
-                                          join createdByUser in dbContext.Users.AsNoTracking() on n.CreatedById equals createdByUser.UserId
-                                          join createdByUserType in dbContext.UserTypes.AsNoTracking() on createdByUser.UserTypeId equals createdByUserType.UserTypeId
-                                          join department in dbContext.Departments.AsNoTracking() on createdByUser.DepartmentId equals department.DepartmentId
+                                          join createdByUser in dbContext.Users.AsNoTracking() on n.CreatedById equals createdByUser.Id
+                                          join createdByUserType in dbContext.UserTypes.AsNoTracking() on createdByUser.UserTypeId equals createdByUserType.Id
+                                          join department in dbContext.Departments.AsNoTracking() on createdByUser.DepartmentId equals department.Id
                                           where n.ContactId == id
                                           select new
                                           {
@@ -82,10 +82,10 @@ namespace ORMBenchmarkTests.Tests
                                           }).ToList();
 
                 var contactAgents = (from agent in dbContext.Agents.AsNoTracking()
-                                     join company in dbContext.Companies.AsNoTracking() on agent.CompanyId equals company.CompanyId
-                                     join createdByUser in dbContext.Users.AsNoTracking() on agent.CreatedById equals createdByUser.UserId
-                                     join createdByUserType in dbContext.UserTypes.AsNoTracking() on createdByUser.UserTypeId equals createdByUserType.UserTypeId
-                                     join department in dbContext.Departments.AsNoTracking() on createdByUser.DepartmentId equals department.DepartmentId
+                                     join company in dbContext.Companies.AsNoTracking() on agent.CompanyId equals company.Id
+                                     join createdByUser in dbContext.Users.AsNoTracking() on agent.CreatedById equals createdByUser.Id
+                                     join createdByUserType in dbContext.UserTypes.AsNoTracking() on createdByUser.UserTypeId equals createdByUserType.Id
+                                     join department in dbContext.Departments.AsNoTracking() on createdByUser.DepartmentId equals department.Id
                                      where agent.ContactId == id
                                      select new
                                      {

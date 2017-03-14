@@ -31,7 +31,7 @@ namespace ORMBenchmarkTests.Tests
                     .Include(c => c.CreatedBy.Department)
                     .Include(c => c.AttributeValues.MinPrice.CurrencyDefinition)
                     .Include(c => c.AttributeValues.MaxPrice.CurrencyDefinition)
-                    .First(x => x.ContactId == id);
+                    .First(x => x.Id == id);
             }
 
             watch.Stop();

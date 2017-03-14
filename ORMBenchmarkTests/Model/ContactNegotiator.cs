@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORMBenchmarkTests.Model
 {
-    public class ContactNegotiator
+    public class ContactNegotiator : BaseEntity
     {
-        public int ContactNegotiatorId { get; set; }
-
         public int ContactId { get; set; }
 
         public Contact Contact { get; set; }

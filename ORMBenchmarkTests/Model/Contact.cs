@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORMBenchmarkTests.Model
 {
-    public class Contact
+    public class Contact : BaseEntity
     {
-        public int ContactId { get; set; }
-
         public int IntA { get; set; }
 
         public int? IntB { get; set; }

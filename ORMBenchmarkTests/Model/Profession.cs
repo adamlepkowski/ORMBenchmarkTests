@@ -1,8 +1,7 @@
 ﻿namespace ORMBenchmarkTests.Model
 {
-    public class Profession
+    public class Profession : BaseEntity
     {
-        public int ProfessionId { get; set; }
         public string Name { get; set; }
     }
 }

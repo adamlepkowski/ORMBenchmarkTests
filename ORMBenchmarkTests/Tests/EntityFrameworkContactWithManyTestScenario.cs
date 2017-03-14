@@ -39,7 +39,7 @@ namespace ORMBenchmarkTests.Tests
                     .Include(c => c.Agents.Select(t => t.Company))
                     .Include(c => c.Agents.Select(t => t.CreatedBy.UserType))
                     .Include(c => c.Agents.Select(t => t.CreatedBy.Department))
-                    .First(x => x.ContactId == id);
+                    .First(x => x.Id == id);
             }
 
             watch.Stop();

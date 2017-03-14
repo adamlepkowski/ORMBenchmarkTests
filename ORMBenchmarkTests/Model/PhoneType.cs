@@ -1,8 +1,7 @@
 ﻿namespace ORMBenchmarkTests.Model
 {
-    public class PhoneType
+    public class PhoneType : BaseEntity
     {
-        public int PhoneTypeId { get; set; }
         public string Type { get; set; }
     }
 }

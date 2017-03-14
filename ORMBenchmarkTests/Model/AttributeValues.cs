@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORMBenchmarkTests.Model
 {
-    public class AttributeValues
+    public class AttributeValues : BaseEntity
     {
-        public int AttributeValuesId { get; set; }
-
         public int MinIntAttributeA { get; set; }
         public int MaxIntAttributeA { get; set; }
         public int? MinIntAttributeB { get; set; }

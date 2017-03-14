@@ -1,8 +1,7 @@
 ﻿namespace ORMBenchmarkTests.Model
 {
-    public class EmailType
+    public class EmailType : BaseEntity
     {
-        public int EmailTypeId { get; set; }
         public string Type { get; set; }
     }
 }

@@ -2,10 +2,8 @@ using System;
 
 namespace ORMBenchmarkTests.Model
 {
-    public class User
+    public class User : BaseEntity
     {
-        public int UserId { get; set; }
-
         public int IntA { get; set; }
 
         public int? IntB { get; set; }

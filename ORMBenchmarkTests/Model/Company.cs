@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace ORMBenchmarkTests.Model
 {
-    public class Company
+    public class Company : BaseEntity
     {
-        public int CompanyId { get; set; }
-
         public int IntA { get; set; }
 
         public int? IntB { get; set; }

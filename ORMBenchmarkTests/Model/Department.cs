@@ -1,9 +1,7 @@
 namespace ORMBenchmarkTests.Model
 {
-    public class Department
+    public class Department : BaseEntity
     {
-        public int DepartmentId { get; set; }
-
         public string Name { get; set; }
     }
 }

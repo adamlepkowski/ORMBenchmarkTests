@@ -1,9 +1,7 @@
 ﻿namespace ORMBenchmarkTests.Model
 {
-    public class CurrencyDefinition
+    public class CurrencyDefinition : BaseEntity
     {
-        public int CurrencyDefinitionId { get; set; }
-
         public string Code { get; set; }
 
     }

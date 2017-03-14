@@ -22,7 +22,7 @@ namespace ORMBenchmarkTests
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder.Entity<Contact>()
-                .Property(f => f.ContactId)
+                .Property(f => f.Id)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
         }
 

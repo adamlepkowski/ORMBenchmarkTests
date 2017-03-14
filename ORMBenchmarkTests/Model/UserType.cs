@@ -7,10 +7,8 @@ using Microsoft.SqlServer.Server;
 
 namespace ORMBenchmarkTests.Model
 {
-    public class UserType
+    public class UserType : BaseEntity
     {
-        public int UserTypeId { get; set; }
-
         public string Type { get; set; }
     }
 }

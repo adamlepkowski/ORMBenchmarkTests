@@ -70,6 +70,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Agent.cs" />
     <Compile Include="Model\AttributeValues.cs" />
+    <Compile Include="Model\BaseEntity.cs" />
     <Compile Include="Model\UserType.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Contact.cs" />
