@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using FizzWare.NBuilder;
 using ORMBenchmarkTests.Model;
 
@@ -7,6 +9,16 @@ namespace ORMBenchmarkTests
     public static class DatabaseManager
     {
         public static int TestedContactId = 1;
+
+        public static void EntityFrameworkWarmup()
+        {
+            Console.WriteLine("Entity Framework Warmup");
+            using (var dbContext = new DatabaseContext())
+            {
+                dbContext.Users.ToList();
+            }
+            Console.WriteLine("END Entity Framework Warmup");
+        }
 
         public static void UploadStoredProcedures()
         {

@@ -24,6 +24,8 @@ namespace ORMBenchmarkTests
 
             DatabaseManager.UploadStoredProcedures();
 
+            DatabaseManager.EntityFrameworkWarmup();
+
             Console.WriteLine("Prepare test data");
 
             var testManager = new TestManager();
@@ -37,6 +39,7 @@ namespace ORMBenchmarkTests
                 testManager.AddTest(new DapperContactWithoutManyTestScenario(connection));
                 testManager.AddTest(new EntityFrameworkContactWithoutManyTestScenario(connection));
                 testManager.AddTest(new EntityFrameworkContactWithManyTestScenario(connection));
+                testManager.AddTest(new EntityFrameworkContactWithManyQuerySyntaxTestScenario(connection));
 
                 testManager.Run();
             }

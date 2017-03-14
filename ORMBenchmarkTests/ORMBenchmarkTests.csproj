@@ -93,6 +93,7 @@
     <Compile Include="Tests\EntityFrameworkContactWithoutManyTestScenario.cs" />
     <Compile Include="Tests\ITestScenario.cs" />
     <Compile Include="Tests\TestManager.cs" />
+    <Compile Include="Tests\EntityFrameworkContactWithManyQuerySyntaxTestScenario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

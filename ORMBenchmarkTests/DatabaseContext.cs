@@ -9,10 +9,12 @@ namespace ORMBenchmarkTests
     {
         public DatabaseContext() : base("ORMBenchmarkTests")
         {
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public DatabaseContext(System.Data.Common.DbConnection dbConnection) : base(dbConnection, false)
         {
+            Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -40,6 +42,8 @@ namespace ORMBenchmarkTests
         public DbSet<PhoneType> PhoneTypes { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<UserType> UserTypes { get; set; }
 
         public DbSet<ContactNegotiator> ContactNegotiators { get; set; }
 
